@@ -1,0 +1,31 @@
+<cu-custom bgColor="bg-gradual-green">
+  <view  slot="content">绩效时钟<text class="cuIcon-remind lg text-gray"></text></view>
+</cu-custom>
+
+
+<basics id="basicsComponent" wx:if="{{PageCur=='basics'}}"></basics>
+<about wx:if="{{PageCur=='about'}}"></about>
+<add wx:if="{{PageCur=='add'}}"></add>
+
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="basics">
+    <view class='icon-cu-image'>
+      <image src="/images/tabbar/basics{{PageCur=='basics'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='basics'?'text-green':'text-gray'}}">首页</view>
+  </view>
+
+  <view class="action text-gray add-action" bindtap="NavChange" data-cur="add">
+    <button class="cu-btn cuIcon-add bg-green shadow"></button>
+    添加工作
+  </view>
+
+
+  <view class="action" bindtap="NavChange" data-cur="about">
+    <view class='icon-cu-image'>
+      <image src="/images/tabbar/about{{PageCur=='about'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='about'?'text-green':'text-gray'}}">个人中心</view>
+  </view>
+
+</view>
