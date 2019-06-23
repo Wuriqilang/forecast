@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    PageCur:'basics',
+    PageCur:'add',
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     motto: 'Hi 开发者！',
@@ -52,7 +52,7 @@ Page({
     }
   },
   onShow: function(){
-    this.selectComponent("#basicsComponent").refresh();
+    
   },
   getUserInfo: function(e) {
     console.log(e)

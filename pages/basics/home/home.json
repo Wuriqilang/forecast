@@ -1,6 +1,3 @@
 {
-  "component": true,
-  "usingComponents": {
-    "calendar": "plugin://calendar/calendar"
-  }
+  "component": true
 }

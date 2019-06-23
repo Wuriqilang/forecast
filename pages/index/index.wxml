@@ -1,5 +1,5 @@
-<cu-custom bgColor="bg-gradual-green">
-  <view  slot="content">绩效时钟<text class="cuIcon-remind lg text-gray"></text></view>
+<cu-custom bgColor="bg-gradual-red">
+  <view  slot="content">收入预测系统 <text class="cuIcon-moneybag lg text-gray"></text></view>
 </cu-custom>
 
 

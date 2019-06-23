@@ -27,7 +27,7 @@
       <!-- last-child选择器-->
     </view>
   </view>
-  <calendar calendar-style="calendar" header-style="calendar-header" board-style="calendar-board" days-color="{{dayStyle}}" weeks-type="cn" binddayClick="dayClick" bindnextMonth="next" bindprevMonth="prev" binddateChange="dateChange" />
+
   <view class="cu-bar bg-white margin-top">
     <view class="action sub-title">
       <text class="text-xl text-bold text-green">管理</text>

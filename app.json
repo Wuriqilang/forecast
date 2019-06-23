@@ -6,7 +6,6 @@
     "pages/about/about/about",
     "pages/about/log/log",
     "pages/about/home/home",
-    "pages/plugin/drawer/drawer",
     "pages/basics/detail/detail",
     "pages/basics/detail2/detail2",
     "pages/basics/notice/notice",
@@ -15,7 +14,7 @@
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",
-    "navigationBarTitleText": "绩效时钟",
+    "navigationBarTitleText": "收入预测系统",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
