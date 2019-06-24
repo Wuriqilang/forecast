@@ -1,39 +1,68 @@
 // pages/add/home/home.js
 const app = getApp();
+//调用日期组件
+import utils from '../../../utils/util.js'
 Component({
   options: {
     addGlobalClass: true,
   },
 	/**
-	 * 组件的属性列表
-	 */
-	properties: {
-
-	},
-
-	/**
 	 * 组件的初始数据
 	 */
 	data: {
-    date: '2019-01-01',
-    date2: '2020-01-01',
-    martisClock:""
+    year: '',
+    month: '',
+    date: '',
+    forecastName:['sss','aaa']
 	},
-
+  //生命周期函数
+  attached(){
+    //==========初始化==================
+    //日期初始化
+    this.setData({
+      date: utils.formatTimeToMonth(new Date()),
+      year: new Date().getFullYear(),
+      month: new Date().getMonth() + 1,
+    })
+    //==========单位初始化==================
+    var that =this;
+    wx.request({
+      url: app.globalData.BaseURL + 'forecastName',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': `Bearer ${app.globalData.token}`
+      },
+      success:res=>{
+        var forecastNameArray=[];
+        for (let i = 0; i < res.data.length; i++) {
+          forecastNameArray.push(res.data[i].Nashuirenmingcheng)
+        }
+          this.setData({
+            forecastName: forecastNameArray,
+          })
+      }
+    })
+  },
 	/**
 	 * 组件的方法列表
 	 */
 	methods: {
     DateChange(e) {
       this.setData({
-        date: e.detail.value
+        date: e.detail.value,
+        year:e.detail.value.substring(0,4),
+        month:e.detail.value.substr(5,2)
       })
+    },
+    forecastNameChange(e){
+
     },
     textareaAInput(e) {
       this.setData({
         textareaAValue: e.detail.value
       })
-    }, formBindSubmit(e) {
+    }, 
+    formBindSubmit(e) {
       console.log(e.detail.value);
       var that = this;
       setTimeout(function () {
