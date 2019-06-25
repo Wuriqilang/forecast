@@ -18,7 +18,7 @@
         </picker>
       </view>
 
-        <view class="cu-form-group margin-top">
+        <view class="cu-form-group">
     <view class="title">填报单位</view>
     <picker bindchange="forecastNameChange" value="{{index}}" range="{{forecastName}}">
       <view class="picker">
@@ -29,11 +29,17 @@
 
 
 
-
-      <view class="cu-form-group">
-        <view class="title">工作内容</view>
-        <input style="text-align:right;" name="martisClockContext" placeholder="输入主要工作内容" bindblur='GetUserID'></input>
-      </view>
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      <text class="cuIcon-titles text-green"></text>
+      <text class="text-xl text-bold">一、税务部门组织税费收入总计</text>
+    </view>
+  </view>
+    <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="text-lg">（一）税务部门组织税收收入合计</text>
+    </view>
+  </view>
       <view class="cu-form-group">
         <view class="title">考评科室</view>
         <input style="text-align:right;" name="martisClockDep" placeholder="请输入绩效任务考评科室" value='{{userID}}'></input>
