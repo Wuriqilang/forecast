@@ -9,7 +9,7 @@
   </view>
     <form bindsubmit='formBindSubmit'>
 
-      <view class="cu-form-group solid-top">
+      <view class="cu-form-group margin-top">
         <view class="title">填报月份</view>
         <picker name="martisClockDate" mode="date" fields="month" value="{{date}}" start="2008-09" end="2030-09" bindchange="DateChange">
           <view class="picker">
@@ -18,7 +18,7 @@
         </picker>
       </view>
 
-        <view class="cu-form-group margin-top">
+        <view class="cu-form-group">
     <view class="title">填报单位</view>
     <picker bindchange="forecastNameChange" value="{{index}}" range="{{forecastName}}">
       <view class="picker">
@@ -30,7 +30,7 @@
 
 
 
-      <view class="cu-form-group">
+      <view class="cu-form-group margin-top">
         <view class="title">工作内容</view>
         <input style="text-align:right;" name="martisClockContext" placeholder="输入主要工作内容" bindblur='GetUserID'></input>
       </view>
