@@ -1,1 +1,5 @@
 /* pages/add/home/home.wxss */
+
+input{
+  min-width:5rem;
+}

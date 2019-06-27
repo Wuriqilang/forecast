@@ -1,8 +1,8 @@
 <!--pages/add/home/home.wxml-->
-<scroll-view scroll-y class="">
+<!-- <scroll-view scroll-y class=""> -->
     <view class="cu-bar bg-white">
     <view class="action sub-title" >
-      <text class=" text-xl text-bold text-red">{{year}}年{{month}}月税费收入统计</text>
+      <text class=" text-xxl text-bold text-red">{{year}}年{{month}}月税费收入统计</text>
       <text class=" bg-red"></text>
       <!-- last-child选择器-->
     </view>
@@ -29,208 +29,213 @@
   <view class="cu-bar bg-white margin-top">
     <view class="action">
       <text class="cuIcon-titles text-green"></text>
-      <text class="text-xl text-bold">一、税务部门组织税费收入总计</text>
+      <text class="text-lg text-bold">一、税务部门组织税费收入总计</text>
+      <input style="width:5rem;text-align:right;" name="" placeholder="金额" value=''></input>
     </view>
   </view>
     <view class="cu-bar bg-white">
     <view class="action">
-      <text class="text-lg">（一）税务部门组织税收收入合计</text>
+      <view class="text-lg">（一）税务部门组织税收收入合计</view>
+      <input style="width:5rem;text-align:right;" name="" placeholder="金额" value=''></input>
     </view>
   </view>
-      <view class="cu-form-group">
+      <!-- <view class="cu-form-group">
         <view class="title">中央级收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
       <view class="cu-form-group">
         <view class="title">地方级收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
       <view class="cu-form-group">
         <view class="title padding-left">自治区级收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
       <view class="cu-form-group">
         <view class="title padding-left">盟（市）级收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
       <view class="cu-form-group">
         <view class="title padding-left">旗县以下级收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
-      </view>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
+      </view> -->
 
 
 			<view class="cu-form-group">
         <view class="title"> 1.国内增值税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			      <view class="cu-form-group">
         <view class="title padding-left">其中：免抵调增增值税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 
 			<view class="cu-form-group">
         <view class="title"> 2.国内消费税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 3.企业所得税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 4.个人所得税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 5.资源税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 6.城镇土地使用税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 7.城市维护建设税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 						<view class="cu-form-group">
         <view class="title">8.印花税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 9.土地增值税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 			<view class="cu-form-group">
         <view class="title">  10.房产税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 			<view class="cu-form-group">
         <view class="title">  11.车船税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 						<view class="cu-form-group">
         <view class="title">12.车辆购置税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title">13.烟叶税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title">14.耕地占用税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 						<view class="cu-form-group">
         <view class="title">15.契税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title">16.环境保护税</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 						<view class="cu-form-group">
         <view class="title">17.其他税收</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 
 		<view class="cu-bar bg-white">
     	<view class="action">
       	<text class="text-lg">（二）社会保险费收入合计</text>
+        <input style="width:8rem;text-align:right;" name="" placeholder="金额" value=''></input>
     	</view>
  		</view>
 
 		<view class="cu-bar bg-white">
     	<view class="action">
       	<text class="text-lg">（三）非税收入合计</text>
+        <input style="width:10rem;text-align:right;" name="" placeholder="金额" value=''></input>
     	</view>
  		</view>
 
 		<view class="cu-form-group">
         <view class="title"> 1.教育费附加收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 			<view class="cu-form-group">
         <view class="title"> 2.地方教育附加</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 3.文化事业建设费收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 4.税务部门罚没收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 5.残疾人就业保障金收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
-        <view class="title"> 6.地方水利建设基金（防洪工程维护费）</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <view class="title"> 6.地方水利建设基金</view>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 7.废弃电器电子产品处理基金收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 						<view class="cu-form-group">
         <view class="title">8.大中型水库移民后期扶持基金收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 9.可再生能源发展基金</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 			<view class="cu-form-group">
         <view class="title">  10.陆上石油矿区使用费收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 			<view class="cu-form-group">
         <view class="title">  11.煤炭价格调节基金</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 						<view class="cu-form-group">
         <view class="title">12..其他</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 
 					<view class="cu-bar bg-white">
     	<view class="action">
       	<text class="text-lg">（四）其他收入合计</text>
+        <input style="width:10rem;text-align:right;" name="" placeholder="金额" value=''></input>
     	</view>
  		</view>
 
 		<view class="cu-form-group">
         <view class="title"> 1.工会经费收入</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 			<view class="cu-form-group">
         <view class="title"> 2.职业年金</view>
-        <input style="text-align:right;" name="" placeholder="" value=''></input>
+        <input style="text-align:right;" name="" placeholder="金额" value=''></input>
       </view>
 
 
@@ -238,7 +243,7 @@
     <view class="action">
       <text class="cuIcon-titles text-green"></text>
       <text class="text-xl text-bold">二、出口退税</text>
-			<input style="text-align:right;" name="" placeholder="" value=''></input>
+			<input style="text-align:right;width:11rem;" name="" placeholder="金额" value=''></input>
     </view>
   </view>
 
@@ -246,7 +251,7 @@
     <view class="action">
       <text class="cuIcon-titles text-green"></text>
       <text class="text-xl text-bold">三、海关代征</text>
-			<input style="text-align:right;" name="" placeholder="" value=''></input>
+			<input style="text-align:right;width:11rem;" name="" placeholder="金额" value=''></input>
     </view>
   </view>
 
@@ -258,4 +263,4 @@
 
 
 
-</scroll-view>
+<!-- </scroll-view> -->
