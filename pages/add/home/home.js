@@ -10,38 +10,11 @@ Component({
 	 * 组件的初始数据
 	 */
 	data: {
-    year: '',
-    month: '',
-    date: '',
-    forecastName:['sss','aaa']
+
 	},
   //生命周期函数
   attached(){
-    //==========初始化==================
-    //日期初始化
-    this.setData({
-      date: utils.formatTimeToMonth(new Date()),
-      year: new Date().getFullYear(),
-      month: new Date().getMonth() + 1,
-    })
-    //==========单位初始化==================
-    var that =this;
-    wx.request({
-      url: app.globalData.BaseURL + 'forecastName',
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': `Bearer ${app.globalData.token}`
-      },
-      success:res=>{
-        var forecastNameArray=[];
-        for (let i = 0; i < res.data.length; i++) {
-          forecastNameArray.push(res.data[i].Nashuirenmingcheng)
-        }
-          this.setData({
-            forecastName: forecastNameArray,
-          })
-      }
-    })
+    
   },
 	/**
 	 * 组件的方法列表
