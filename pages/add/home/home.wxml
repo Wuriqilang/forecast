@@ -13,22 +13,3 @@
       <input type="text" placeholder="输入纳税单位名称查询" confirm-type="search"></input>
     </view>
   </view>
-
-
-
-
-<view class="cu-list menu sm-border margin-bottom">
-	  <view wx:for="{{forecastInform}}" wx:key="{{item.Nashuirenmingcheng}}" class="cu-item" style='padding:0 10rpx;'>
-      <view class="content">
-        <text class="cuIcon-friendfill text-red"></text>
-        <text class="text-grey text-df"> {{item.Nashuirenmingcheng}}</text>
-      </view>
-      <view class="action">
-        <view class="cu-tag round {{Submited?'bg-green':'bg-red'}} light">{{forecastInform.forecastID?'已填报':'未填报'}}</view>
-      </view>
-			      <view class="action">
-        <button class="cu-btn round bg-green shadow" style='height:48rpx;padding:0 10rpx;' bindtap='SubmitForecast' data-target="{{item}}">
-          <text class="cuIcon-roundaddfill" ></text>填报</button>
-      </view>
-    </view>
-		</view>

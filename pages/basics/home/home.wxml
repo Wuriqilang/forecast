@@ -1,11 +1,16 @@
 <!-- <scroll-view scroll-y class="scrollPage"> -->
 <scroll-view scroll-y class="">
 
-  <!-- <view class="text-black bg-cyan light radius text-md margin-top margin-bottom margin-left margin-right padding-top padding-bottom">
-    <text class="cuIcon-warn text-red margin-left-lg"></text> 置顶公告: {{msg}}
-  </view> -->
+<view class="cu-bar bg-gradual-blue search">
+        <view class="padding title text-bold">选择填报月份</view>
+        <picker name="martisClockDate" mode="date" fields="month" value="{{date}}" start="2008-09" end="2030-09" bindchange="DateChange">
+          <view class="padding picker">
+            {{date}}
+          </view>
+        </picker>
+</view>
 
-  <view class="cu-list grid no-border col-4 bg-gradual-green radius margin-top margin-left margin-right margin-bottom">
+  <view class="cu-list grid no-border col-4 bg-gradual-blue radius margin-top margin-left margin-right margin-bottom">
     <view class="cu-item" wx:for="{{iconList}}" wx:key style="padding-bottom:10rpx;">
     <navigator url="/pages/basics/{{item.url}}/{{item.url}}?type={{item.type}}">
       <view class="cuIcon-{{item.icon}} text-{{item.color}}" style='font-size:25px;'>
@@ -22,30 +27,35 @@
 
   <view class="cu-bar bg-white">
     <view class="action sub-title">
-      <text class="text-xl text-bold text-green">绩效日历</text>
-      <text class="bg-green"></text>
+      <text class="text-xl text-bold text-blue">详细信息</text>
+      <text class="bg-blue"></text>
       <!-- last-child选择器-->
     </view>
   </view>
 
-  <view class="cu-bar bg-white margin-top">
-    <view class="action sub-title">
-      <text class="text-xl text-bold text-green">管理</text>
-      <text class="bg-green"></text>
-      <!-- last-child选择器-->
+  <view class="cu-bar bg-gradual-blue search">
+    <view class="search-form radius">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="输入纳税单位名称查询" confirm-type="search"></input>
     </view>
   </view>
-  <view class='nav-list margin-top' style='padding:0px 10rpx 0px;'>
-      <navigator open-type="navigate" hover-class='none' url="/pages/basics/detail2/detail2?type=0" class="nav-li bg-olive" >
-      <view class="nav-title">我的绩效</view>
-      <view class="nav-name">Martis</view>
-      <text class='cuIcon-rankfill'></text>
-    </navigator>
-    <navigator open-type="navigate" hover-class='none' url="/pages/basics/people/people" class="nav-li bg-olive" >
-      <view class="nav-title">用户管理</view>
-      <view class="nav-name">People</view>
-      <text class='cuIcon-rankfill'></text>
-    </navigator>
-  </view>
+<view class="cu-list menu sm-border margin-bottom">
+	  <view wx:for="{{forecastInform}}" wx:key="{{item.Nashuirenmingcheng}}" class="cu-item" style='padding:0 10rpx;'>
+      <view class="content">
+        <text class="cuIcon-friendfill text-red"></text>
+        <text class="text-grey text-df"> {{item.Nashuirenmingcheng}}</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round {{item.forecastID?'bg-green':'bg-red'}} light">{{item.forecastID?'已填报':'未填报'}}</view>
+      </view>
+			      <view class="action">
+        <button class="cu-btn round bg-blue shadow" style='height:48rpx;padding:0 10rpx;' bindtap='SubmitForecast' data-target="{{item}}">
+          <text class="cuIcon-newsfill" ></text>详情</button>
+      </view>
+    </view>
+	</view>
+
+
+
   <view class='cu-tabbar-height'></view>
 </scroll-view>

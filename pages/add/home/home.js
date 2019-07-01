@@ -10,8 +10,6 @@ Component({
 	 * 组件的初始数据
 	 */
 	data: {
-    year: '',
-    month: '',
     date: '',
     forecastInform:[]
 	},
@@ -20,8 +18,6 @@ Component({
     //日期初始化
     this.setData({
       date: utils.formatTimeToMonth(new Date()),
-      year: new Date().getFullYear(),
-      month: new Date().getMonth() + 1,
     })
     //获取列表
     //==========单位初始化==================
@@ -47,8 +43,22 @@ Component({
     DateChange(e) {
       this.setData({
         date: e.detail.value,
-        year:e.detail.value.substring(0,4),
-        month:e.detail.value.substr(5,2)
+      })
+      //获取列表
+      //==========单位初始化==================
+      var that = this;
+      wx.request({
+        url: app.globalData.BaseURL + 'forecastInform/' + this.data.date,
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': `Bearer ${app.globalData.token}`
+        },
+        success: res => {
+          console.log(res.data)
+          this.setData({
+            forecastInform: res.data,
+          })
+        }
       })
     },
     SubmitForecast(e){
@@ -56,48 +66,6 @@ Component({
       wx.navigateTo({
         url: "/pages/add/addPage/addPage?Nashuirenmingcheng="+forecastInform.Nashuirenmingcheng+'&id='+forecastInform.id+'&date='+this.data.date
       })
-    },
-    textareaAInput(e) {
-      this.setData({
-        textareaAValue: e.detail.value
-      })
-    }, 
-    formBindSubmit(e) {
-      console.log(e.detail.value);
-      var that = this;
-      setTimeout(function () {
-        wx.request({
-          method: 'POST',
-          url: app.globalData.BaseURL + 'martisClock/martisClockSubmit', //接口地址
-          data: e.detail.value,
-          header: { 'content-type': 'application/json' },
-          success: function (res) {
-            console.log(res);
-            if (res.statusCode == 200) {
-              wx.showToast({
-                title: res.data.code,
-                icon: 'success',
-                duration: 2000
-              })
-              setTimeout(function () {
-                wx.navigateTo({
-                  url: '/pages/index/index',
-                })
-              }, 2000)
-            }
-            else {
-              wx.showToast({
-                title: '失败，请注意输入格式！',
-                icon: 'none',
-                duration: 2000
-              })
-            }
-          },
-          fail: function (res) {
-            console.log('Error' + ':' + res)
-          }
-        })
-      }, 1000);
     },
 	}
 })

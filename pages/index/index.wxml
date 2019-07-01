@@ -12,12 +12,12 @@
     <view class='icon-cu-image'>
       <image src="/images/tabbar/basics{{PageCur=='basics'?'_cur':''}}.png"></image>
     </view>
-    <view class="{{PageCur=='basics'?'text-green':'text-gray'}}">首页</view>
+    <view class="{{PageCur=='basics'?'text-green':'text-gray'}}">管理</view>
   </view>
 
   <view class="action text-gray add-action" bindtap="NavChange" data-cur="add">
     <button class="cu-btn cuIcon-add bg-green shadow"></button>
-    添加工作
+    填报信息
   </view>
 
 
