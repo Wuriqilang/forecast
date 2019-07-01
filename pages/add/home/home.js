@@ -10,11 +10,39 @@ Component({
 	 * 组件的初始数据
 	 */
 	data: {
-
+    year: '',
+    month: '',
+    date: '',
+    forecastInform:[]
 	},
   //生命周期函数
   attached(){
-    
+    //日期初始化
+    this.setData({
+      date: utils.formatTimeToMonth(new Date()),
+      year: new Date().getFullYear(),
+      month: new Date().getMonth() + 1,
+    })
+    //获取列表
+    //==========单位初始化==================
+    var that = this;
+    wx.request({
+      url: app.globalData.BaseURL + 'forecastName',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': `Bearer ${app.globalData.token}`
+      },
+      success: res => {
+        console.log(res.data)
+        // var forecastNameArray = [];
+        // for (let i = 0; i < res.data.length; i++) {
+        //   forecastNameArray.push(res.data[i].Nashuirenmingcheng)
+        // }
+        this.setData({
+          forecastInform: res.data,
+        })
+      }
+    })
   },
 	/**
 	 * 组件的方法列表
@@ -27,8 +55,11 @@ Component({
         month:e.detail.value.substr(5,2)
       })
     },
-    forecastNameChange(e){
-
+    SubmitForecast(e){
+      var forecastInform = e.target.dataset.target;
+      wx.navigateTo({
+        url: "/pages/add/addPage/addPage?Nashuirenmingcheng="+forecastInform.Nashuirenmingcheng+'&id='+forecastInform.id+'&date='+this.data.date
+      })
     },
     textareaAInput(e) {
       this.setData({

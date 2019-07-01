@@ -1,52 +1,30 @@
 <!--pages/add/addPage/addPage.wxml-->
-<cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="backText">返回</view>
   <view slot="content">收入预测系统</view>
 </cu-custom>
 
     <view class="cu-bar bg-white">
     <view class="action sub-title" >
-      <text class=" text-xl text-bold text-red">{{forecastUser}} {{year}}年{{month}}月税收统计</text>
+      <text class=" text-lg text-bold text-red">{{Nashuirenmingcheng}} {{date}}税收统计</text>
       <text class=" bg-red"></text>
       <!-- last-child选择器-->
     </view>
   </view>
     <form bindsubmit='formBindSubmit'>
 
-      <!-- <view class="cu-form-group margin-top">
-        <view class="title">填报月份</view>
-        <picker name="martisClockDate" mode="date" fields="month" value="{{date}}" start="2008-09" end="2030-09" bindchange="DateChange">
-          <view class="picker">
-            {{date}}
-          </view>
-        </picker>
-      </view>
-
-  <view class="cu-form-group">
-    <view class="title">填报单位</view>
-    <picker bindchange="forecastNameChange" value="{{index}}" range="{{forecastName}}">
-      <view class="picker">
-        {{index?forecastName[index]:'请选择填报单位'}}
-      </view>
-    </picker>
-  </view> -->
-
   <view class="cu-bar bg-white margin-top">
     <view class="action">
       <text class="cuIcon-titles text-green"></text>
       <text class="text-lg text-bold">一、税务部门组织税费收入总计</text>
+      <input style="text-align:right;width:5rem;" disabled="true"  type='digit' name="Shuiwubumenzuzhishuifeishouruzongji" placeholder="金额" value='{{total1}}'></input>
     </view>
-		<view class="flex justify-end padding">
-			<text class="text-lg text-bold">{{total1}}</text>
-		</view>
   </view>
   <view class="cu-bar bg-white">
     <view class="action">
       <view class="text-lg">（一）税务部门组织税收收入合计</view>
+      <input style="text-align:right;width:5rem;" disabled="true" type='digit' name="Shuiwubumenzuzhishuishoushouruheji" placeholder="金额" value='{{total11}}'></input>
     </view>
-		<view class="flex justify-end padding">
-			<text class="text-lg">{{total11}}</text>
-		</view>
   </view>
       <!-- <view class="cu-form-group">
         <view class="title">中央级收入</view>
@@ -73,184 +51,178 @@
 
 			<view class="cu-form-group">
         <view class="title"> 1.国内增值税</view>
-        <input style="text-align:right;" type='digit'  name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit'  name="Guoneizengzhishui"  bindinput="GuoneizengzhishuiInput" placeholder="金额" value='{{Guoneizengzhishui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title padding-left">其中：免抵调增增值税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Qizhongmianditiaozengzengzhishui" bindinput="QizhongmianditiaozengzengzhishuiInput" placeholder="金额" value='{{Qizhongmianditiaozengzengzhishui}}'></input>
       </view>
 
 
 			<view class="cu-form-group">
         <view class="title"> 2.国内消费税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Guoneixiaofeishui" bindinput='GuoneixiaofeishuiInput' placeholder="金额" value='{{Guoneixiaofeishui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 3.企业所得税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Qiyesuodeshui" bindinput="QiyesuodeshuiInput" placeholder="金额" value='{{Qiyesuodeshui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 4.个人所得税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Gerensuodeshui" bindinput='GerensuodeshuiInput' placeholder="金额" value='{{Gerensuodeshui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 5.资源税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Ziyuanshui" bindinput='ZiyuanshuiInput' placeholder="金额" value='{{Ziyuanshui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 6.城镇土地使用税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Chengzhentudishiyongshui" bindinput='ChengzhentudishiyongshuiInput' placeholder="金额" value='{{Chengzhentudishiyongshui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 7.城市维护建设税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Chengshiweihujiansheshui" bindinput='ChengshiweihujiansheshuiInput' placeholder="金额" value='{{Chengshiweihujiansheshui}}'></input>
       </view>
 
 						<view class="cu-form-group">
         <view class="title">8.印花税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Yinhuashui" bindinput='YinhuashuiInput' placeholder="金额" value='{{Yinhuashui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 9.土地增值税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Tudizengzhishui" bindinput='TudizengzhishuiInput' placeholder="金额" value='{{Tudizengzhishui}}'></input>
       </view>
 			<view class="cu-form-group">
         <view class="title">  10.房产税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Fangchanshui" bindinput='FangchanshuiInput' placeholder="金额" value='{{Fangchanshui}}'></input>
       </view>
 			<view class="cu-form-group">
         <view class="title">  11.车船税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Chechuanshui" bindinput='ChechuanshuiInput' placeholder="金额" value='{{Chechuanshui}}'></input>
       </view>
 						<view class="cu-form-group">
         <view class="title">12.车辆购置税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Chelianggouzhishui" bindinput="ChelianggouzhishuiInput" placeholder="金额" value='{{Chelianggouzhishui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title">13.烟叶税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Yanyeshui" bindinput='YanyeshuiInput' placeholder="金额" value='{{Yanyeshui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title">14.耕地占用税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Gengdizhanyongshui" bindinput='GengdizhanyongshuiInput' placeholder="金额" value='{{Gengdizhanyongshui}}'></input>
       </view>
 
 						<view class="cu-form-group">
         <view class="title">15.契税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Qishui" bindinput="QishuiInput" placeholder="金额" value='{{Qishui}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title">16.环境保护税</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Huanjingbaohushui" bindinput='HuanjingbaohushuiInput' placeholder="金额" value='{{Huanjingbaohushui}}'></input>
       </view>
 
 						<view class="cu-form-group">
         <view class="title">17.其他税收</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Qitashuishou" bindinput='QitashuishouInput' placeholder="金额" value='{{Qitashuishou}}'></input>
       </view>
 
 
 		<view class="cu-bar bg-white">
     	<view class="action">
       	<text class="text-lg">（二）社会保险费收入合计</text>
+        <input style="Padding:0 10rpx; text-align:right;width:8rem;"  type='digit' name="Shehuibaoxianfeishouruheji" bindinput='ShehuibaoxianfeishouruhejiInput' placeholder="金额" value='{{total12}}'></input>
     	</view>
-					<view class="flex justify-end padding">
-			<text class="text-lg">{{total12}}</text>
-		</view>
  		</view>
 
 		<view class="cu-bar bg-white">
     	<view class="action">
       	<text class="text-lg">（三）非税收入合计</text>
+        <input style="Padding:0 10rpx; text-align:right;width:10rem;" disabled="true" type='digit' name="Feishuishouruheji"  placeholder="金额" value='{{total13}}'></input>
     	</view>
-					<view class="flex justify-end padding">
-			<text class="text-lg">{{total13}}</text>
-		</view>
  		</view>
 
 		<view class="cu-form-group">
         <view class="title"> 1.教育费附加收入</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Jiaoyufeifujiashouru" bindinput='JiaoyufeifujiashouruInput' placeholder="金额" value='{{Jiaoyufeifujiashouru}}'></input>
       </view>
 			<view class="cu-form-group">
         <view class="title"> 2.地方教育附加</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Difangjiaoyufujia" bindinput='DifangjiaoyufujiaInput' placeholder="金额" value='{{Difangjiaoyufujia}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 3.文化事业建设费收入</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Wenhuashiyejianshefeishouru" bindinput='WenhuashiyejianshefeishouruInput' placeholder="金额" value='{{Wenhuashiyejianshefeishouru}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 4.税务部门罚没收入</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Shuiwubumenfamoshouru" bindinput='ShuiwubumenfamoshouruInput' placeholder="金额" value='{{Shuiwubumenfamoshouru}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 5.残疾人就业保障金收入</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Canjirenjiuyebaozhangjinshouru" bindinput='CanjirenjiuyebaozhangjinshouruInput' placeholder="金额" value='{{Canjirenjiuyebaozhangjinshouru}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 6.地方水利建设基金</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Difangshuilijianshejijin" bindinput='DifangshuilijianshejijinInput' placeholder="金额" value='{{Difangshuilijianshejijin}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 7.废弃电器电子产品处理基金收入</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Feiqidianqidianzichanpinchulijijinshouru" bindinput='FeiqidianqidianzichanpinchulijijinshouruInput' placeholder="金额" value='{{Feiqidianqidianzichanpinchulijijinshouru}}'></input>
       </view>
 
 						<view class="cu-form-group">
         <view class="title">8.大中型水库移民后期扶持基金收入</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Dazhongxingshuikuyiminhouqifuchijijinshouru" bindinput='DazhongxingshuikuyiminhouqifuchijijinshouruInput' placeholder="金额" value='{{Dazhongxingshuikuyiminhouqifuchijijinshouru}}'></input>
       </view>
 
 			<view class="cu-form-group">
         <view class="title"> 9.可再生能源发展基金</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Kezaishengnengyuanfazhanjijin" bindinput='KezaishengnengyuanfazhanjijinInput' placeholder="金额" value='{{Kezaishengnengyuanfazhanjijin}}'></input>
       </view>
 			<view class="cu-form-group">
         <view class="title">  10.陆上石油矿区使用费收入</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Lushangshiyoukuangqushiyongfeishouru" bindinput='LushangshiyoukuangqushiyongfeishouruInput' placeholder="金额" value='{{Lushangshiyoukuangqushiyongfeishouru}}'></input>
       </view>
 			<view class="cu-form-group">
         <view class="title">  11.煤炭价格调节基金</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;" type='digit' name="Meitanjiagetiaojiejijin" bindinput='MeitanjiagetiaojiejijinInput' placeholder="金额" value='{{Meitanjiagetiaojiejijin}}'></input>
       </view>
 						<view class="cu-form-group">
-        <view class="title">12..其他</view>
-        <input style="text-align:right;" type='digit' name="" placeholder="金额" value=''></input>
+        <view class="title">12.其他</view>
+        <input style="text-align:right;" type='digit' name="Qita" bindinput='QitaInput' placeholder="金额" value='{{Qita}}'></input>
       </view>
 
 
 					<view class="cu-bar bg-white">
     	<view class="action">
       	<text class="text-lg">（四）其他收入合计</text>
+        <input style="text-align:right;width:10rem;" disabled='true' type='digit' name="Qitashouruheji" placeholder="金额" value='{{total14}}'></input>
     	</view>
-					<view class="flex justify-end padding">
-			<text class="text-lg">{{total14}}</text>
-		</view>
  		</view>
 
 		<view class="cu-form-group">
         <view class="title"> 1.工会经费收入</view>
-        <input style="text-align:right;"  type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;"  type='digit' name="Gonghuijingfeishouru" bindinput='GonghuijingfeishouruInput' placeholder="金额" value='{{Gonghuijingfeishouru}}'></input>
       </view>
 			<view class="cu-form-group">
         <view class="title"> 2.职业年金</view>
-        <input style="text-align:right;"  type='digit' name="" placeholder="金额" value=''></input>
+        <input style="text-align:right;"  type='digit' name="Zhiyenianjin" bindinput='ZhiyenianjinInput' placeholder="金额" value='{{Zhiyenianjin}}'></input>
       </view>
 
 
@@ -258,7 +230,7 @@
     <view class="action">
       <text class="cuIcon-titles text-green"></text>
       <text class="text-xl text-bold">二、出口退税</text>
-			<input style="text-align:right;width:11rem;"  type='digit' name="" placeholder="金额" value=''></input>
+			<input style="text-align:right;width:11rem;"  type='digit' name="Chukoutuishui" placeholder="金额" value='{{total2}}'></input>
     </view>
   </view>
 
@@ -266,7 +238,7 @@
     <view class="action">
       <text class="cuIcon-titles text-green"></text>
       <text class="text-xl text-bold">三、海关代征</text>
-			<input style="text-align:right;width:11rem;" type='digit' name="" placeholder="金额" value=''></input>
+			<input style="text-align:right;width:11rem;" type='digit' name="Haiguandaizheng" placeholder="金额" value='{{total3}}'></input>
     </view>
   </view>
 

@@ -1,28 +1,34 @@
 <!--pages/add/home/home.wxml-->
-  <view class="cu-bar bg-gradual-red search">
+<view class="cu-bar bg-gradual-blue search">
+        <view class="padding title text-bold">选择填报月份</view>
+        <picker name="martisClockDate" mode="date" fields="month" value="{{date}}" start="2008-09" end="2030-09" bindchange="DateChange">
+          <view class="padding picker">
+            {{date}}
+          </view>
+        </picker>
+</view>
+  <view class="cu-bar bg-gradual-blue search">
     <view class="search-form radius">
       <text class="cuIcon-search"></text>
       <input type="text" placeholder="输入纳税单位名称查询" confirm-type="search"></input>
     </view>
-    <view class="action">
-      <text class="cuIcon-close"></text>
-      <text>取消</text>
-    </view>
   </view>
-<view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
-	  <view class="cu-item arrow">
+
+
+
+
+<view class="cu-list menu sm-border margin-bottom">
+	  <view wx:for="{{forecastInform}}" wx:key="{{item.Nashuirenmingcheng}}" class="cu-item" style='padding:0 10rpx;'>
       <view class="content">
-        <text class="cuIcon-tagfill text-red"></text>
-        <text class="text-grey">标签</text>
+        <text class="cuIcon-friendfill text-red"></text>
+        <text class="text-grey text-df"> {{item.Nashuirenmingcheng}}</text>
       </view>
       <view class="action">
-        <view class="cu-tag round bg-orange light">音乐</view>
-        <view class="cu-tag round bg-olive light">电影</view>
-        <view class="cu-tag round bg-blue light">旅行</view>
+        <view class="cu-tag round {{Submited?'bg-green':'bg-red'}} light">{{Submited?'已填报':'未填报'}}</view>
       </view>
 			      <view class="action">
-        <button class="cu-btn round bg-green shadow">
-          <text class="cuIcon-upload"></text> 申报</button>
+        <button class="cu-btn round bg-green shadow" style='height:48rpx;padding:0 10rpx;' bindtap='SubmitForecast' data-target="{{item}}">
+          <text class="cuIcon-roundaddfill" ></text>填报</button>
       </view>
     </view>
 		</view>

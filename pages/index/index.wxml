@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-red">
+<cu-custom bgColor="bg-gradual-blue">
   <view  slot="content">收入预测系统 <text class="cuIcon-moneybag lg text-gray"></text></view>
 </cu-custom>
 
