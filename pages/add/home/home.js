@@ -27,17 +27,13 @@ Component({
     //==========单位初始化==================
     var that = this;
     wx.request({
-      url: app.globalData.BaseURL + 'forecastName',
+      url: app.globalData.BaseURL + 'forecastInform/'+this.data.date,
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
         'Authorization': `Bearer ${app.globalData.token}`
       },
       success: res => {
         console.log(res.data)
-        // var forecastNameArray = [];
-        // for (let i = 0; i < res.data.length; i++) {
-        //   forecastNameArray.push(res.data[i].Nashuirenmingcheng)
-        // }
         this.setData({
           forecastInform: res.data,
         })

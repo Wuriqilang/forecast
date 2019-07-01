@@ -24,7 +24,7 @@
         <text class="text-grey text-df"> {{item.Nashuirenmingcheng}}</text>
       </view>
       <view class="action">
-        <view class="cu-tag round {{Submited?'bg-green':'bg-red'}} light">{{Submited?'已填报':'未填报'}}</view>
+        <view class="cu-tag round {{Submited?'bg-green':'bg-red'}} light">{{forecastInform.forecastID?'已填报':'未填报'}}</view>
       </view>
 			      <view class="action">
         <button class="cu-btn round bg-green shadow" style='height:48rpx;padding:0 10rpx;' bindtap='SubmitForecast' data-target="{{item}}">
