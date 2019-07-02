@@ -1,15 +1,37 @@
 <!--pages/add/home/home.wxml-->
-<view class="cu-bar bg-gradual-blue search">
-        <view class="padding title text-bold">选择填报月份</view>
-        <picker name="martisClockDate" mode="date" fields="month" value="{{date}}" start="2008-09" end="2030-09" bindchange="DateChange">
+<scroll-view scroll-y class="scrollPage" style='background-color:white;'>
+  <view class="UCenter-bg">
+    <image src="https://api.xr1228.com/static/img/logo.png" class="png" mode="widthFix"></image>
+    <view class="text-xl text-black text-bold">国家税务总局苏里格经济技术开发区税务局
+    </view>
+    <view class="margin-top-sm">
+      <text class='text-black text-bold'>收入预测系统 ⏲️</text>
+    </view>
+    <image src="https://api.xr1228.com/static/img/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow shadow-lg radius">
+			<view class="cu-bar bg-gradual-blue light ">
+      <view class="padding title text-bold">社会信用码或单位名称</view>
+      <input class='padding-right' style="text-align:right;" type=''  name="yingyezhizhaobianhao" placeholder="营业执照编号" bindinput="yingyezhizhaobianhaoInput" value=''></input>
+		</view>
+
+
+
+		<view class="cu-bar bg-gradual-blue light  search">
+      <view class="padding title text-bold">选择填报月份</view>
+      <picker name="martisClockDate" mode="date" fields="month" value="{{date}}" start="2008-09" end="2030-09" bindchange="DateChange">
           <view class="padding picker">
             {{date}}
           </view>
-        </picker>
-</view>
-  <view class="cu-bar bg-gradual-blue search">
-    <view class="search-form radius">
-      <text class="cuIcon-search"></text>
-      <input type="text" placeholder="输入纳税单位名称查询" confirm-type="search"></input>
-    </view>
+      </picker>
+		</view>
   </view>
+
+
+			<view class="padding flex flex-direction">
+        <button class="cu-btn bg-gradual-blue shadow shadow-lg lg" bindtap="submitStart">开始填报</button>
+    </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

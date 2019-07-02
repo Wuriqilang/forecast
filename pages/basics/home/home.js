@@ -14,23 +14,23 @@ Component({
       icon: 'list',
       color: 'white',
       badge: 0,
-      name: '进行中',
+      name: '已填报',
       type: 2,
-      url: 'detail2'
+      url: 'already'
     }, {
       icon: 'check',
       color: 'white',
       badge: 0,
-      name: '已完成',
+      name: '未填报',
       type: 1,
-      url: 'detail2'
+      url: 'padding'
     }, {
       icon: 'notice',
       color: 'white',
       badge: 0,
-      name: '提醒',
+      name: '统计',
       type: 3,
-      url: 'detail2'
+      url: 'summary'
     }, {
       icon: 'comment',
       color: 'white',
