@@ -23,7 +23,7 @@ Page({
     let that = this;
     // 获取消息信息
     wx.request({
-      url: app.globalData.BaseURL + 'message/martisClock/' + app.globalData.user.userID, //真实的接口地址
+      url: app.globalData.BaseURL + 'message/forecast/admin', //真实的接口地址
       data: {},
       header: { 'Content-Type': 'application/x-www-form-urlencoded' },
       success: function (res) {
@@ -74,14 +74,14 @@ Page({
     }
     var that = this;
     setTimeout(function () {
-      query.MessageSubmit('admin', messageTo, e.detail.value.messageContext, '通知','martisClock')
+      query.MessageSubmit('admin', messageTo, e.detail.value.messageContext, '通知','forecast')
     }, 1000);
     wx.showToast({
       title: '公告发布成功!',
     }, 2000)
     // 获取消息信息
     wx.request({
-      url: app.globalData.BaseURL + 'message/martisClock/' + app.globalData.user.userID, //真实的接口地址
+      url: app.globalData.BaseURL + 'message/forecast/' + app.globalData.user.userID, //真实的接口地址
       data: {},
       header: { 'Content-Type': 'application/x-www-form-urlencoded' },
       success: function (res) {

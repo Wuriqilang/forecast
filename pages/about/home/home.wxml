@@ -4,7 +4,7 @@
     <view class="text-xl text-black text-bold">国家税务总局苏里格经济技术开发区税务局
     </view>
     <view class="margin-top-sm">
-      <text class='text-red text-bold'>绩效时钟⏲️</text>
+      <text class='text-red text-bold'>收入预测系统 ⏲️</text>
     </view>
     <image src="https://api.xr1228.com/static/img/wave.gif" mode="scaleToFill" class="gif-wave"></image>
   </view>
@@ -38,7 +38,7 @@
       <navigator class="content" url="/pages/about/about/about" hover-class="none">
         <!-- <image src="/images/logo.png" class="png" mode="aspectFit"></image> -->
         <text class="cuIcon-notice text-red"></text>
-        <text class="text-grey ">关于资产身份证</text>
+        <text class="text-grey ">关于收入预测系统</text>
       </navigator>
     </view>
     <view class="cu-item arrow">

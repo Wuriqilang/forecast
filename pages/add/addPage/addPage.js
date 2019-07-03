@@ -327,6 +327,13 @@ Page({
               icon: 'success',
               duration: 2000
             })
+						setTimeout(() => {
+							wx.navigateTo({
+								url: '/pages/index/index',
+							})
+
+						},1000)
+
           } else {
             wx.showToast({
               title: '失败，本月已有数据！',

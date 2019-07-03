@@ -40,7 +40,8 @@ Component({
     },],
     dayStyle: [
     ],
-    dataList: [], date: '',
+    dataList: [], 
+		date: '',
     forecastInform: []
   },
   //生命周期函数
@@ -51,43 +52,47 @@ Component({
     })
     //获取列表
     //==========单位初始化==================
-    var that = this;
-    wx.request({
-      url: app.globalData.BaseURL + 'forecastInform/' + this.data.date,
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': `Bearer ${app.globalData.token}`
-      },
-      success: res => {
-        console.log(res.data)
-        this.setData({
-          forecastInform: res.data,
-        })
-      }
-    })
+		this.DataUpdate();
   },
 
   methods: {
+		DataUpdate(){
+			var that = this;
+			wx.request({
+				url: app.globalData.BaseURL + 'forecastInform/' + this.data.date,
+				header: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+					'Authorization': `Bearer ${app.globalData.token}`
+				},
+				success: res => {
+					var alreadyCount=0;
+					var paddingCount=0;
+					for (let i of res.data) {
+						if (i.forecastID){
+							alreadyCount++
+						}else{
+							paddingCount++
+						}
+					}
+					console.log(alreadyCount);
+					let alreadyCountBadge = `iconList[0].badge`;
+					let paddingCountBadge = `iconList[1].badge`;
+					//获取已经添加的数量,获取未添加的数量
+					this.setData({
+						forecastInform: res.data,
+						[alreadyCountBadge]:alreadyCount,
+						[paddingCountBadge]:paddingCount
+					})
+				}
+			})
+		},
     DateChange(e) {
       this.setData({
         date: e.detail.value,
       })
       //获取列表
       //==========单位初始化==================
-      var that = this;
-      wx.request({
-        url: app.globalData.BaseURL + 'forecastInform/' + this.data.date,
-        header: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': `Bearer ${app.globalData.token}`
-        },
-        success: res => {
-          console.log(res.data)
-          this.setData({
-            forecastInform: res.data,
-          })
-        }
-      })
+      this.DataUpdate();
     },
     SubmitForecast(e) {
       var forecastInform = e.target.dataset.target;
@@ -95,6 +100,12 @@ Component({
         url: "/pages/add/addPage/addPage?Nashuirenmingcheng=" + forecastInform.Nashuirenmingcheng + '&id=' + forecastInform.id + '&date=' + this.data.date
       })
     },
+		forecastDetail(e){
+			var forecastInform = e.target.dataset.target;
+			wx.navigateTo({
+				url: "/pages/basics/detail/detail?Nashuirenmingcheng=" + forecastInform.Nashuirenmingcheng + '&id=' + forecastInform.id + '&date=' + this.data.date+ '&forecastID=' + forecastInform.forecastID
+			})
+		}
   }
 
 

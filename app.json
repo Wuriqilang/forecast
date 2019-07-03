@@ -7,11 +7,8 @@
 		"pages/about/about/about",
 		"pages/about/log/log",
 		"pages/about/home/home",
-		"pages/basics/detail/detail",
-		"pages/basics/detail2/detail2",
 		"pages/basics/notice/notice",
-		"pages/basics/alert/alert",
-		"pages/basics/people/people"
+		"pages/basics/detail/detail"
 	],
 	"window": {
 		"navigationBarBackgroundColor": "#39b54a",
