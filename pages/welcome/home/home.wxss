@@ -1,5 +1,5 @@
 .UCenter-bg {
-  background-image: url(https://api.xr1228.com/static/img/background3.jpeg);
+  background-image: url(https://api.xr1228.com/static/img/background.jpeg);
   background-size: cover;
   height: 550rpx;
   display: flex;

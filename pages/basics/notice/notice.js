@@ -9,7 +9,6 @@ Page({
     addGlobalClass: true,
   },
   data: {
-
     TabCur: 0,
     scrollLeft: 0,
     index: null,
@@ -79,33 +78,28 @@ Page({
     wx.showToast({
       title: '公告发布成功!',
     }, 2000)
+    
     // 获取消息信息
     wx.request({
-      url: app.globalData.BaseURL + 'message/forecast/' + app.globalData.user.userID, //真实的接口地址
+      url: app.globalData.BaseURL + 'message/forecast/admin', //真实的接口地址
       data: {},
       header: { 'Content-Type': 'application/x-www-form-urlencoded' },
       success: function (res) {
-        console.log(res);
-        if (res.data == 'No Session') {
-          wx.navigateTo({
-            url: '/pages/welcome/home/home',
-          })
-        }
-        else {
-          console.log(res.data);
-          var messageData = res.data;
-          that.setData({
-            Message: res.data //设置数据
-          })
-        }
+        console.log(res.data);
+        var messageData = res.data;
+        that.setData({
+          Message: res.data //设置数据
+        })
       },
       fail: function (err) {
         console.log(err)
       }
     })
-    this.setData({
-      TabCur:0
-    })
+    setTimeout(function(){
+      that.setData({
+        TabCur: 0
+      })
+    },1000)
   },
 
   methods: {

@@ -4,29 +4,9 @@
 </cu-custom>
 
 
-<view class="cu-card article">
-  <view class="cu-item shadow">
-    <view class="title">
-      <view class="text-cut">{{forecastUser.Nashuirenmingcheng}}</view>
-    </view>
-    <view class="content">
-      <image src="https://api.xr1228.com/static/img/logo.png" mode="aspectFit"></image>
-      <view class="desc">
-        <view class="text-content"> {{forecastUser.Jingyingfanwei}}</view>
-        <view>
-          <view class="cu-tag bg-red light sm round">{{forecastUser.Dengjiriqi}}</view>
-          <view class="cu-tag bg-green light sm round">{{forecastUser.Nashuirenzhuangtai}}</view>
-          <view class="cu-tag bg-black light sm round">{{forecastUser.Banshuirenyidongdianhua}}</view>
-        </view>
-      </view>
-    </view>
-  </view>
-</view>
-
-
 <view class="cu-bar bg-white">
   <view class="action sub-title">
-    <text class=" text-lg text-bold text-red">{{Nashuirenmingcheng}} {{date}}</text>
+    <text class=" text-lg text-bold text-red">{{date}}收入情况汇总</text>
     <text class=" bg-red"></text>
     <!-- last-child选择器-->
   </view>
@@ -35,7 +15,7 @@
   <view class="action">
     <text class="cuIcon-titles text-green"></text>
     <text class="text-lg text-bold">一、税务部门组织税费收入总计</text>
-    <text class='padding' style="text-align:right;width:3rem;">{{forecastInform.Shuiwubumenzuzhishuifeishouruzongji}}</text>
+    <text class='padding' style="text-align:right;width:4rem;">{{forecastInform.Shuiwubumenzuzhishuifeishouruzongji}}</text>
   </view>
 </view>
 

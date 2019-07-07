@@ -3,7 +3,7 @@
   <view slot="content">通知</view>
 </cu-custom>
 
-<scroll-view scroll-x class="bg-gradual-green nav text-center">
+<scroll-view scroll-x class="bg-gradual-blue nav text-center">
   <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
     <text class="cuIcon-camerafill"></text> 通知列表
   </view>

@@ -12,7 +12,7 @@
 
   <view class="cu-list grid no-border col-4 bg-gradual-blue radius margin-top margin-left margin-right margin-bottom">
     <view class="cu-item" wx:for="{{iconList}}" wx:key style="padding-bottom:10rpx;">
-    <navigator url="/pages/basics/{{item.url}}/{{item.url}}?type={{item.type}}">
+    <navigator url="/pages/basics/{{item.url}}/{{item.url}}?date={{date}}">
       <view class="cuIcon-{{item.icon}} text-{{item.color}}" style='font-size:25px;'>
         <view wx:if="{{item.badge!=0}}" class="cu-tag badge">
           <block wx:if="{{item.badge!=0}}">{{item.badge>99?"99+":item.badge}}</block>
@@ -48,9 +48,13 @@
       <view class="action">
         <view class="cu-tag round {{item.forecastID?'bg-green':'bg-red'}} light">{{item.forecastID?'已填报':'未填报'}}</view>
       </view>
-			      <view class="action">
+			<view class="action">
         <button class="cu-btn round bg-blue shadow" style='height:48rpx;padding:0 10rpx;' bindtap='forecastDetail' data-target="{{item}}">
           <text class="cuIcon-newsfill"></text>详情</button>
+      </view>
+      <view wx:if="{{item.forecastID}}" class="action">
+        <button class="cu-btn round bg-red shadow" style='height:48rpx;padding:0 10rpx;' bindtap='forecastInformDelete' data-target="{{item.forecastID}}">
+          <text class="cuIcon-back"></text>回退</button>
       </view>
     </view>
 	</view>

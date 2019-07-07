@@ -68,7 +68,8 @@ Page({
           console.log(res);
 					if (res.data.success) {
 						//存储用户信息 用于用户登陆状态维护
-						app.globalData.user = res.data.data;
+            console.log(res.data.data);
+						app.globalData.user = res.data.data.userID;
             //存储token
             app.globalData.token=res.data.token;
 						wx.showToast({
@@ -78,7 +79,7 @@ Page({
 						})
 						setTimeout(() => {
 							wx.navigateTo({
-								url: '/pages/index/index'
+								url: '/pages/index/index?page=0'
 							})
 						}, 1000)
 					}else{
@@ -97,6 +98,12 @@ Page({
 
 
 	},
+  notManager(e){
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/index/index',
+    })
+  },
 	/**
 	 * 用户点击右上角分享
 	 */

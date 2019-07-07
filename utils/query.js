@@ -30,7 +30,7 @@ function MessageSubmit(messageFrom,messageTo,messageContext,messageType,messageS
 	console.log(messageFrom + "," + messageTo+","+messageContext);
 	wx.request({
 		method: 'POST',
-		url: app.globalData.BaseURL + '/messageSubmit',
+		url: app.globalData.BaseURL + 'messageSubmit',
 		data: { messageFrom: messageFrom,messageTo:messageTo,messageContext:messageContext,messageType:messageType,messageSource:messageSource },
 		header: { 'content-type': 'application/json' },
 		success: function (res) {
