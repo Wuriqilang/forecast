@@ -1,3 +1,4 @@
+var utils = require('../../../utils/util.js')
 //获取应用实例
 const app = getApp();
 //调用方法组
@@ -100,7 +101,55 @@ Page({
         TabCur: 0
       })
     },1000)
-  },
+	}, 
+	showModal(e) {
+		this.setData({
+			modalName: e.currentTarget.dataset.target
+		})
+	},
+	hideModal(e) {
+		this.setData({
+			modalName: null
+		})
+	},
+	smsToAll(e){
+		var that = this;
+		var forecastID = e.target.dataset.target;
+		wx.request({
+			method: 'POST',
+			url: app.globalData.BaseURL + 'forecastSMS',
+			header: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+				'Authorization': `Bearer ${app.globalData.token}`
+			},
+			data:
+			{
+				date: utils.formatTimeToMonth(new Date()),
+				messageType: 0
+			},
+			success: function (res) {
+				console.log(res);
+				if (res.statusCode == 200) {
+					wx.showToast({
+						title: res.data.code,
+						icon: 'success',
+						duration: 2000
+					})
+					setTimeout(() => {
+						that.hideModal(); //隐藏modal框
+					}, 1000)
+
+				} else {
+					wx.showToast({
+						title: '删除失败！',
+						icon: 'none',
+						duration: 2000
+					})
+				}
+			}
+		})
+		
+	},
 
   methods: {
     onShareAppMessage() {
