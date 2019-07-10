@@ -46,7 +46,7 @@ App({
     userInfo: null,
 		user:null,
     token:'',
-    BaseURL: "http://localhost:3000/"
-    //BaseURL:"https://api.xr1228.com/"
+    //BaseURL: "http://localhost:3000/"
+    BaseURL:"https://api.xr1228.com/"
   }
 })
