@@ -5,10 +5,10 @@
 
 <scroll-view scroll-x class="bg-gradual-blue nav text-center">
   <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
-    <text class="cuIcon-listfill"></text> 通知列表
+    <text class="cuIcon-listfill"></text> 站内通知列表
   </view>
   <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
-    <text class="cuIcon-upstagefill"></text> 发布通知
+    <text class="cuIcon-upstagefill"></text> 站内发布通知
   </view>
 	<view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="2">
     <text class="cuIcon-messagefill"></text> 短信通知
@@ -68,23 +68,33 @@
 
 	<view wx:if="{{2==TabCur}}">
 		<view class="cu-bar bg-white margin-top">
-  <view class="action">
-    <text class="cuIcon-title text-orange "></text> 向所有用户推送提醒短信
-  </view>
-  <view class="action">
-    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="DialogModal1">Dialog</button>
-  </view>
-</view>
+			<view class="action">
+				<text class="cuIcon-title text-orange "></text> 向所有用户推送提醒短信
+			</view>
+			<view class="action">
+				<button class="cu-btn bg-green shadow" bindtap="showModal" data-target="DialogModal1">推送</button>
+			</view>
+		</view>
 
 
-<view class="cu-bar bg-white margin-top">
-  <view class="action">
-    <text class="cuIcon-title text-orange "></text> 向本月未填写用户推送提醒短信
-  </view>
-  <view class="action">
-    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="DialogModal2">Dialog</button>
-  </view>
-</view>
+		<view class="cu-bar bg-white margin-top">
+			<view class="action">
+				<text class="cuIcon-title text-orange "></text> 向本月未填写用户推送提醒短信
+			</view>
+			<view class="action">
+				<button class="cu-btn bg-green shadow" bindtap="showModal" data-target="DialogModal2">推送</button>
+			</view>
+		</view>
+
+		<view class="cu-bar bg-white margin-top">
+			<view class="action">
+				<text class="cuIcon-title text-orange "></text> 向测试用户推送提醒短信
+				<input style="text-align:right;width:5rem;" bindinput='testPhoneInput'  type='digit' name="testPhone" placeholder="电话号码" value='{{testPhone}}'></input>
+			</view>
+			<view class="action">
+				<button class="cu-btn bg-green shadow" bindtap="showModal"  data-target="DialogModal3">推送</button>
+			</view>
+		</view>
 	</view>
 
 <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
@@ -102,7 +112,6 @@
       <view class="action">
         <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
         <button class="cu-btn bg-green margin-left" bindtap="smsToAll">确定</button>
-
       </view>
     </view>
   </view>
@@ -119,9 +128,32 @@
     <view class="padding-xl">
       您确定向本月未填写用户推送提醒短信吗?注意:管理员请勿随意此功能,以免不必要的短信对用户造成影响。
     </view>
-    <view class="cu-bar bg-white">
-      <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
-      <button class="cu-btn bg-green margin-left" bindtap="smsToPadding">确定</button>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left" bindtap="smsToPadding">确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="cu-modal {{modalName=='DialogModal3'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">向用户推送提醒短信</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      您确定向测试用户发送醒短信吗?注意:管理员请勿随意此功能,以免不必要的短信对用户造成影响。
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left" bindtap="smsToTest">确定</button>
+      </view>
     </view>
   </view>
 </view>

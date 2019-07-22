@@ -113,8 +113,19 @@ Page({
 		})
 	},
 	smsToAll(e){
+		var messageType = 0;
+		this.SetMessage(messageType);
+	},
+	smsToPadding(e) {
+		var messageType = 1;
+		this.SetMessage(messageType);
+	},
+	smsToTest(e) {
+		var messageType = 2;
+		this.SetMessage(messageType);
+	},
+	SetMessage(messageType){
 		var that = this;
-		var forecastID = e.target.dataset.target;
 		wx.request({
 			method: 'POST',
 			url: app.globalData.BaseURL + 'forecastSMS',
@@ -125,7 +136,8 @@ Page({
 			data:
 			{
 				date: utils.formatTimeToMonth(new Date()),
-				messageType: 0
+				messageType: messageType,
+				testPhone: that.data.testPhone
 			},
 			success: function (res) {
 				console.log(res);
@@ -148,9 +160,13 @@ Page({
 				}
 			}
 		})
-		
+		this.hideModal();
 	},
-
+	testPhoneInput(e){
+		this.setData({
+			testPhone:e.detail.value
+		})
+	},
   methods: {
     onShareAppMessage() {
       return {
